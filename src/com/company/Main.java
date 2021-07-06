@@ -1,3 +1,4 @@
+
 package com.company;
 import java.util.Random;
 public class Main {
@@ -18,7 +19,6 @@ public class Main {
         while (!isFinished()) {
             round();
         }
-
 
     }
 
@@ -72,12 +72,21 @@ public class Main {
         } else {
             BerserkHealth = BerserkHealth - (BossDamage) / 2;
         }
-        if ( ThorHealth - BossDamage < 0) {
+        if (ThorHealth - BossDamage < 0) {
             ThorHealth = 0;
-        }else {
+        }
+        Random random = new Random();
+        int Discombobulate = random.nextInt(2);
+        if (ThorHealth > 0 && Discombobulate > 0){
+            System.out.println("Thor оглушвет");
+            if (ThorHealth > 200 && Discombobulate > 0){
+                ThorHealth = 200;
+            }
+        }
+        if (ThorHealth > 0 && Discombobulate == 0 ){
             ThorHealth = ThorHealth - BossDamage;
         }
-    }
+        }
 
 
 
@@ -131,10 +140,23 @@ public class Main {
                 BossHealth = BossHealth - ThorDamage;
                 if (BossHealth - ThorDamage < 0) {
                     BossHealth = 0;
+                    Random random = new Random();
+                    int Discombobulate = random.nextInt(2);
+                    if (ThorHealth > 0 && Discombobulate > 0){
+                        System.out.println("Thor оглушвет");
+                        if (ThorHealth > 200 && Discombobulate > 0){
+                            ThorHealth = 200;
+                        }
+                    }
+                    if (ThorHealth > 0 && Discombobulate == 0 ){
+                        ThorHealth = ThorHealth - BossDamage;
+                    }
+
+                    }
 
                 }
             }
-        }
+
                 public static void fightInfo () {
                     System.out.println("________________________________");
                     System.out.println("Boss Health: " + BossHealth);
