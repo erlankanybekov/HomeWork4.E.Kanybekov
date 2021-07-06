@@ -143,7 +143,7 @@ public class Main {
                     Random random = new Random();
                     int Discombobulate = random.nextInt(2);
                     if (ThorHealth > 0 && Discombobulate > 0){
-                        System.out.println("Thor оглушвет");
+                        System.out.println("Thor оглушил");
                         if (ThorHealth > 200 && Discombobulate > 0){
                             ThorHealth = 200;
                         }
